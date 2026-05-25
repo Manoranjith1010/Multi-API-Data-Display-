@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multi-API Data Display | Promise Chaining Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Multi-API Data Display</h1>
+            <p>Fetching data from 3 APIs using Promise Chaining</p>
+        </div>
+
+        <!-- Control Section -->
+        <div class="control-section">
+            <div class="info-box">
+                <strong>How it works:</strong> Click the button below to start fetching data from three different APIs sequentially. 
+                Each API call will be delayed and the data will be displayed in tables as it arrives.
+            </div>
+
+            <button class="btn-fetch" id="fetchBtn" onclick="handleFetchClick()">
+                Fetch Data from All APIs
+            </button>
+
+            <!-- Status Indicators -->
+            <div class="status-container">
+                <div class="status-item" id="status-posts">
+                    <div class="status-icon">1</div>
+                    <span>Posts API</span>
+                </div>
+                <div class="status-item" id="status-products">
+                    <div class="status-icon">2</div>
+                    <span>Products API</span>
+                </div>
+                <div class="status-item" id="status-todos">
+                    <div class="status-icon">3</div>
+                    <span>Todos API</span>
+                </div>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+        </div>
+
+        <!-- Data Display Section -->
+        <div class="content-section">
+            <!-- Posts Table -->
+            <div class="data-section">
+                <h2>📰 Posts Data</h2>
+                <div class="table-wrapper" id="postsTableWrapper">
+                    <table id="postsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th>User ID</th>
+                            </tr>
+                        </thead>
+                        <tbody id="postsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <div class="data-section">
+                <h2>🛍️ Products Data</h2>
+                <div class="table-wrapper" id="productsTableWrapper">
+                    <table id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Todos Table -->
+            <div class="data-section">
+                <h2>✅ Todos Data</h2>
+                <div class="table-wrapper" id="todosTableWrapper">
+                    <table id="todosTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Todo</th>
+                                <th>Completed</th>
+                                <th>User ID</th>
+                            </tr>
+                        </thead>
+                        <tbody id="todosBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
